@@ -86,17 +86,14 @@ export class ApiV1WizziFsController implements ControllerType {
         var hash = __check.notEmpty('body', 'hash');
         var content = __check.notEmpty('body', 'content');
         var prettify = __check.optional('body', 'prettify');
-        console.log("result", __check.errors, __check.hasErrors());
-        if (__check.hasErrors()) {
+        if (__check.hasErrors) {
             return __check.sendErrors(response);
         }
         putIttfDocument(hash, content, prettify).then((result: any) => 
-        {
-            console.log("result", result);
+        
             sendSuccess(response, result)
-        }
         ).catch((err: any) => {
-            console.log("err", err);
+        
             if (typeof err === 'object' && err !== null) {
             }
             console.log("[31m%s[0m", 'ApiV1WizziFs.putIttfDocument.error', err);

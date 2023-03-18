@@ -15,7 +15,7 @@ import {packiTypes} from '../packi';
 import {config} from '../config';
 import * as wizziMaps from './maps';
 import {createJsonFsAndFactory, ensurePackiFilePrefix, createFilesystemFactory} from './factory';
-import {GeneratedArtifact, TransformedModel} from './types';
+import {GenerationOptions, GeneratedArtifact, TransformationOptions, TransformedModel} from './types';
 import {JsonFs} from 'wizzi-repo';
 const myname = 'features/wizzi/productions';
 
@@ -235,7 +235,7 @@ export async function wrapIttfText(schema: string, ittftext: string, context?: a
         );
 }
 
-export async function generateArtifact(filePath: string, files: packiTypes.PackiFiles, context?: any, options?: any):  Promise<GeneratedArtifact> {
+export async function generateArtifact(filePath: string, files: packiTypes.PackiFiles, context?: any, options?: GenerationOptions):  Promise<GeneratedArtifact> {
 
     return new Promise(async (resolve, reject) => {
         
@@ -267,7 +267,7 @@ export async function generateArtifact(filePath: string, files: packiTypes.Packi
                     ;
                     jsonwf.wf.loadModelAndGenerateArtifact(ittfDocumentUri, {
                         modelRequestContext: generationContext || {}, 
-                        artifactRequestContext: generationContext || {}
+                        artifactRequestContext: options.artifactContext || {}
                      }, generator, (err: any, result: string) => {
                     
                         if (err) {
@@ -292,7 +292,7 @@ export async function generateArtifact(filePath: string, files: packiTypes.Packi
         );
 }
 
-export async function generateArtifactFs(filePath: string, context?: any, options?: any):  Promise<GeneratedArtifact> {
+export async function generateArtifactFs(filePath: string, context?: any, options?: GenerationOptions):  Promise<GeneratedArtifact> {
 
     return new Promise(async (resolve, reject) => {
         
@@ -389,7 +389,34 @@ export async function generateFolderArtifacts(sourceFolderUri: string, destFolde
         );
 }
 
-export async function transformModel(filePath: string, files: packiTypes.PackiFiles, context?: any, options?: any):  Promise<TransformedModel> {
+export async function generateFolderArtifactsFs(sourceFolderUri: string, destFolderUri: string, context?: any):  Promise<string> {
+
+    return new Promise(async (resolve, reject) => {
+        
+            try {
+                const wf = await createFilesystemFactory();
+                wf.generateFolderArtifacts(sourceFolderUri, {
+                    modelRequestContext: context, 
+                    artifactRequestContext: context
+                 }, {
+                    destFolder: destFolderUri
+                 }, (err: any, result: string) => {
+                
+                    if (err) {
+                        return reject(err);
+                    }
+                    resolve("Generated folder artifacts")
+                }
+                )
+            } 
+            catch (ex) {
+                return reject(ex);
+            } 
+        }
+        );
+}
+
+export async function transformModel(filePath: string, files: packiTypes.PackiFiles, context?: any, options?: TransformationOptions):  Promise<TransformedModel> {
 
     return new Promise(async (resolve, reject) => {
         
@@ -444,7 +471,7 @@ export async function transformModel(filePath: string, files: packiTypes.PackiFi
         );
 }
 
-export async function transformModelFs(filePath: string, context?: any, options?: any):  Promise<TransformedModel> {
+export async function transformModelFs(filePath: string, context?: any, options?: TransformationOptions):  Promise<TransformedModel> {
 
     return new Promise(async (resolve, reject) => {
         

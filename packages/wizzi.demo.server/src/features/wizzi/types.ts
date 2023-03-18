@@ -14,10 +14,17 @@ export type JsonWizziFactory = {
     wf: wizzi.WizziFactory;
     jsonFs: JsonFs;
 };
+export type GenerationOptions = { 
+    generator: string;
+    artifactContext?: any;
+};
 export type GeneratedArtifact = { 
     artifactContent: string;
     sourcePath: string;
     artifactGenerator: string;
+};
+export type TransformationOptions = { 
+    transformer: string;
 };
 export type TransformedModel = { 
     transformResult: any;

@@ -15,4 +15,5 @@ export type ConfigType = {
     metaHtmlIttfPath: string;
     metaFolderIttfPath: string;
     metaHtmlTextPath: string;
+    jobsBasePath: string;
 };

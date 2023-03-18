@@ -5,7 +5,9 @@
 */
 import {ControllerType} from '../features/app';
 import {HomeController} from './controllers/home';
+import {ProductionsController} from './controllers/productions';
 const siteControllers: ControllerType[] = [
-    new HomeController()
+    new HomeController(), 
+    new ProductionsController()
 ];
 export {siteControllers};

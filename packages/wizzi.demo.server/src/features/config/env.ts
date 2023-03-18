@@ -42,7 +42,8 @@ export default function create():  ConfigType {
                 dataPath: __dataPath, 
                 metaHtmlIttfPath: path.join(__ittfPath, 'meta', 'html', 'index.html.ittf'), 
                 metaFolderIttfPath: path.join(__ittfPath, 'meta', 'folder', 'index.html.ittf'), 
-                metaHtmlTextPath: path.join(__ittfPath, 'meta', 'text', 'index.html.ittf')
+                metaHtmlTextPath: path.join(__ittfPath, 'meta', 'text', 'index.html.ittf'), 
+                jobsBasePath: path.join(__ittfPath, 'data', 'jobs')
              };
             Object.keys(config).forEach((element) => {
             
