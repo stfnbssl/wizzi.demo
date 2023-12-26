@@ -21,3 +21,38 @@ if (tnum == 1) {
         });
 }
 
+if (tnum == 2) {
+    createPluginPackage("xml");
+}
+
+async function createPluginsPackages() {
+    const plugins = [
+        "css",
+        "graphql",
+        "html",
+        "ittf",
+        "js",
+        "json",
+        "md",
+        "svg",
+        "text",
+        "ts",
+        "xml",
+        "yaml",
+    ];
+
+}
+async function createPluginPackage(plugin:string) {
+    wizziMetaApi.createWizziPackage({
+        metaSourcesFolderPath: "C:/My/wizzi/stfnbssl/wizzi.cli/packages/wizzi.cli.meta",
+        metaGenerator: "js-wizzi-plugin",
+        outputPackageName: "wizzi.plugin." + plugin,
+        cliCtxName: "wizzi.plugin." + plugin,
+        outputPackagePath: "C:/My/wizzi/stfnbssl/wizzi.plugins/packages"
+    })
+    .then( result => {
+        console.log("createWizziPackage.result", result);
+    }).catch(err => {
+        console.log("createWizziPackage.err", err);
+    });
+}

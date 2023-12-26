@@ -1,0 +1,81 @@
+module
+    kind react
+    import React
+        @ useState
+        from 'react'
+    import 
+        @ useTasks
+        @ useTasksDispatch
+        from './TasksContext.js'
+    +
+    export-default 
+        function TaskList
+            const tasks = useTasks()
+            return 
+                ul 
+                    { 
+                        _ tasks.map
+                            => 
+                                param task
+                                li 
+                                    @ key {task.id}
+                                    < Task 
+                                        @ task {task}
+    +
+    function Task
+        { 
+            @ task
+        const [isEditing, setIsEditing] = useState(false)
+        const dispatch = useTasksDispatch()
+        let taskContent
+        if isEditing
+            set taskContent =
+                < React.Fragment
+                    input 
+                        @ value {task.text}
+                        @ onChange
+                            => 
+                                param e
+                                _ dispatch
+                                    { 
+                                        @ type 'changed'
+                                        { task
+                                            @ ...task
+                                            @ text e.target.value
+                    button 
+                        @ onClick
+                            => 
+                                _ setIsEditing(false)
+                        + Save
+        else
+            set taskContent =
+                < React.Fragment
+                    + {task.text}
+                    button 
+                        @ onClick
+                            => 
+                                _ setIsEditing(true)
+                        + Edit
+        return 
+            label 
+                input 
+                    @ type "checkbox"
+                    @ checked {task.done}
+                    @ onChange
+                        => 
+                            param e
+                            _ dispatch
+                                { 
+                                    @ type 'changed'
+                                    { task
+                                        @ ...task
+                                        @ done e.target.checked
+                + {taskContent}
+                button 
+                    @ onClick
+                        => 
+                            _ dispatch
+                                { 
+                                    @ type 'deleted'
+                                    @ id task.id
+                    + Delete

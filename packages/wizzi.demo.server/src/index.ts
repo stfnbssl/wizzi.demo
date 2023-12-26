@@ -7,8 +7,9 @@ import {ApiType, ControllerType, AppInitializerType, MiddlewareType} from './fea
 import {config} from './features/config/index';
 import {siteControllers} from './site/index';
 import {wizziFsControllers} from './features/wizziFs/index';
-import {productionControllers, productionModelBuilders} from './features/production/index';
-import {cdnControllers, cdnModelBuilders} from './features/cdn/index';
+import {wizziGistControllers} from './features/wizziGist/index';
+import {wizziMetaControllers} from './features/wizziMeta/index';
+import {packiEditControllers} from './features/packiEdit/index';
 import {appMiddlewaresPre, appMiddlewaresPost} from './middlewares/index';
 import App from './App';
 var app: any = {
@@ -26,8 +27,9 @@ async function start() {
     let controllers: ControllerType[] = [
         ...siteControllers, 
         ...wizziFsControllers, 
-        ...productionControllers, 
-        ...cdnControllers
+        ...wizziGistControllers, 
+        ...wizziMetaControllers, 
+        ...packiEditControllers
     ];
     console.log("[33m%s[0m", 'Starting app. Config:', config);
     const appInitializer: AppInitializerType = {

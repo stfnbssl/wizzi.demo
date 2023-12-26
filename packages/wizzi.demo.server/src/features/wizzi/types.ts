@@ -15,7 +15,7 @@ export type JsonWizziFactory = {
     jsonFs: JsonFs;
 };
 export type GenerationOptions = { 
-    generator: string;
+    generator?: string;
     artifactContext?: any;
 };
 export type GeneratedArtifact = { 
@@ -58,4 +58,25 @@ export type MetaContext = {
 export type ArtifactRequest = { 
     ittfDocument: MetaIttfDocument;
     contextItems: MetaContext[];
+};
+
+export type WizziModelTypesRequest = { 
+    storeKind?: wizzi.StoreKind;
+    wfschemaName: string;
+    wfschemaIttfDocumentUri: string;
+    wfschemaOutputPackageFolder: string;
+    mTreeBuildupContext?: any;
+    globalContext?: any;
+    pluginsBaseFolder: string;
+    plugins: string[];
+};
+
+export type WizziJobTypesRequest = { 
+    storeKind?: wizzi.StoreKind;
+    wfjobName?: string;
+    wfjobIttfDocumentUri: string;
+    globalContext?: any;
+    pluginsBaseFolder: string;
+    plugins: string[];
+    productionOptions?: wizzi.ProductionOptions;
 };

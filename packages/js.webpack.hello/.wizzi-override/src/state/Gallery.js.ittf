@@ -1,0 +1,35 @@
+module
+    kind react
+    import React
+        @ useState
+        from 'react'
+    import 
+        @ sculptureList
+        from './data.js'
+    export-default 
+        function Gallery
+            const [index, setIndex] = useState(0)
+            function handleClick
+                _ setIndex(index + 1)
+            let sculpture = sculptureList[index]
+            return 
+                < React.Fragment
+                    button 
+                        @ onClick {handleClick}
+                        + Next
+                    h2 
+                        i 
+                            + {sculpture.name}
+                        + by
+                        + {sculpture.artist}
+                    h3 
+                        + (
+                        + {index + 1}
+                        + of
+                        + {sculptureList.length}
+                        + )
+                    img 
+                        @ src {sculpture.url}
+                        @ alt {sculpture.alt}
+                    p 
+                        + {sculpture.description}

@@ -1,0 +1,37 @@
+$group
+    useWizzi true
+    { wizzi
+        isDev true
+        useV08 true
+        { v08
+            [ plugins
+                "css"
+                "graphql"
+                "html"
+                "ittf"
+                "js"
+                "ts"
+                "json"
+                "md"
+                "text"
+                "svg"
+                "xml"
+                "yaml"
+        [ plugins
+            "./wizzi.plugin.css/index.js"
+            "./wizzi.plugin.graphql/index.js"
+            "./wizzi.plugin.html/index.js"
+            "./wizzi.plugin.ittf/index.js"
+            "./wizzi.plugin.js/index.js"
+            "./wizzi.plugin.ts/index.js"
+            "./wizzi.plugin.json/index.js"
+            "./wizzi.plugin.md/index.js"
+            "./wizzi.plugin.text/index.js"
+            "./wizzi.plugin.svg/index.js"
+            "./wizzi.plugin.xml/index.js"
+            "./wizzi.plugin.yaml/index.js"
+        pluginsBaseFolder "C:/My/wizzi/stfnbssl/wizzi.plugins/packages"
+        { globalContext
+            wzConfigIsDevelopment true
+            wzConfigIsPackageDeploy false
+        useRunner false

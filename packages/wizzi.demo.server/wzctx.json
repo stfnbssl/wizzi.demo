@@ -122,17 +122,34 @@
         "wizzi": {
             "isDev": true,
             "plugins": [
-                "./wizzi-core/index.js",
-                "./wizzi-js/index.js",
-                "./wizzi-web/index.js",
-                "./wizzi-meta/index.js"
+                "./wizzi.plugin.c/index.js",
+                "./wizzi.plugin.css/index.js",
+                "./wizzi.plugin.go/index.js",
+                "./wizzi.plugin.graphql/index.js",
+                "./wizzi.plugin.html/index.js",
+                "./wizzi.plugin.ittf/index.js",
+                "./wizzi.plugin.java/index.js",
+                "./wizzi.plugin.js/index.js",
+                "./wizzi.plugin.json/index.js",
+                "./wizzi.plugin.md/index.js",
+                "./wizzi.plugin.py/index.js",
+                "./wizzi.plugin.regexp/index.js",
+                "./wizzi.plugin.svg/index.js",
+                "./wizzi.plugin.text/index.js",
+                "./wizzi.plugin.ts/index.js",
+                "./wizzi.plugin.vtt/index.js",
+                "./wizzi.plugin.vue/index.js",
+                "./wizzi.plugin.yaml/index.js"
             ],
-            "pluginsBaseFolder": "C:/My/wizzi/stfnbssl/wizzi/packages",
+            "pluginsBaseFolder": "C:/My/wizzi/stfnbssl/wizzi.plugins/packages",
             "globalContext": {
-                "wzConfigIsDevelopment": true
+                "wzConfigIsDevelopment": true,
+                "wzConfigIsPackageDeploy": false
             },
             "useRunner": false
         },
+        "useWizziFs": true,
+        "wizziFs": {},
         "useIttfStatic": true,
         "ittfStatic": {},
         "useWizziViewEngine": true,

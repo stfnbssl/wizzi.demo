@@ -1,0 +1,41 @@
+{
+    "name": "demo.ts.node.wizzi.v08",
+    "version": "0.0.1",
+    "author": {
+        "name": "Stefano Bassoli",
+        "email": "stfn.bssl@gmail.com"
+    },
+    "private": false,
+    "main": "",
+    "scripts": {
+        "start": "set NODE_ENV=development && nodemon --watch src/** --ext ts,json --ignore src/**/*.spec.ts --exec ./node_modules/.bin/ts-node src/index.ts"
+    },
+    "dependencies": {
+        "@babel/preset-env": "^7.2.0",
+        "@wizzi/factory": "latest",
+        "@wizzi/utils": "latest",
+        "@wizzi/plugin.css": "latest",
+        "@wizzi/plugin.graphql": "latest",
+        "@wizzi/plugin.html": "latest",
+        "@wizzi/plugin.ittf": "latest",
+        "@wizzi/plugin.js": "latest",
+        "@wizzi/plugin.ts": "latest",
+        "@wizzi/plugin.json": "latest",
+        "@wizzi/plugin.md": "latest",
+        "@wizzi/plugin.text": "latest",
+        "@wizzi/plugin.svg": "latest",
+        "@wizzi/plugin.xml": "latest",
+        "@wizzi/plugin.yaml": "latest",
+        "dotenv": "16.0.1",
+        "envalid": "^7.0.0",
+        "minimist": "latest",
+        "rimraf": "^3.0.2",
+        "tslib": "^2.4.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.0.0",
+        "ts-node": "^10.8.1",
+        "ts-node-dev": "^1.1.6",
+        "typescript": "^4.2.3"
+    }
+}

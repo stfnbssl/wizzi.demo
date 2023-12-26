@@ -6,16 +6,15 @@ module
         @ pretty
         from 'wizzi-utils'
     import
-        @ getIttfFileContentByHash
-        @ putIttfFileContentByHash
-        from './byHash'
+        @ wizziFsApi
+        from '../../wizziFs'
     var fsfile = fSystem.vfile()
     +
     async-function getIttfDocument
         param hash
             :string
         r_promise()
-            _ getIttfFileContentByHash
+            _ wizziFsApi.getIttfFileContentByHash
                 @ hash
                 ._ then
                     =>
@@ -43,7 +42,7 @@ module
         param prettify
             :string
         r_promise()
-            _ putIttfFileContentByHash
+            _ wizziFsApi.putIttfFileContentByHash
                 @ hash
                 @ content
                 ._ then

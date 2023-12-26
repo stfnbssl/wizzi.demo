@@ -1,0 +1,12 @@
+html
+    head
+        meta
+            charset utf-8
+        @title Getting Started
+    body
+        h1 Welcome to my hybrid app
+        . parent
+            . sidebar
+                ++ This is server non-React markup
+                # sidebar-content
+            # root

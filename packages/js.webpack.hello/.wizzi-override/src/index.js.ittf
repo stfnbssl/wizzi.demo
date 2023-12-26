@@ -1,0 +1,40 @@
+module
+    kind react
+    import React
+        @ StrictMode
+        from "react"
+    import 
+        @ createRoot
+        from "react-dom/client"
+    import "./style.css"
+    import Icon from './icon.png'
+    import jsonData from './data.json'
+    import yamlData from './data.yaml'
+    import App from "./appPortal/App"
+    import PortalApp from "./portal/PortalApp"
+    import UseContextApp from "./useContextApp"
+    import TasksApp from "./tasks/TasksApp"
+    import StateApp from "./state/StateApp"
+    +    
+    info 'jsonData', jsonData
+    info 'yamlData', yamlData
+    +
+    function Hello
+        return
+            div
+                @ className hello
+                h1
+                    + Hello webpack
+                img
+                    @ src {Icon}
+    +
+    const container = document.getElementById("root")
+    const root = createRoot(container)
+    _ root.render
+        < StrictMode 
+            < Hello
+            < App     
+            < PortalApp
+            < UseContextApp
+            < TasksApp
+            < StateApp

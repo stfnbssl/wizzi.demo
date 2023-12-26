@@ -16,4 +16,7 @@ export type ConfigType = {
     metaFolderIttfPath: string;
     metaHtmlTextPath: string;
     jobsBasePath: string;
+    userUserName: string;
+    userDisplayName: string;
+    userAvatarUrl: string;
 };

@@ -67,8 +67,10 @@ export class ProductionController implements ControllerType {
     private artifact = async (request: Request, response: Response) => {
     
         const artifactRequest: ArtifactRequest = request.body;
+        console.log(myname + '.handler.artifact.received request (keys)', Object.keys(artifactRequest), __filename);
         resolveContexts(artifactRequest.contextItems).then((context: any) => {
         
+            console.log(myname, 'handler.artifact.resolvedContext', Object.keys(context), __filename);
             if (artifactRequest.ittfDocument.source == 'fs') {
                 wizziProds.generateArtifactFs(path.join(config.ittfPath, artifactRequest.ittfDocument.path as string), context).then(generatedArtifact => 
                 

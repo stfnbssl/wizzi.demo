@@ -1,0 +1,34 @@
+module
+    kind react
+    import React
+        @ useState
+        from 'react'
+    import 
+        @ useTasksDispatch
+        from './TasksContext.js'
+    +
+    export-default 
+        function AddTask
+            const [text, setText] = useState('')
+            const dispatch = useTasksDispatch()
+            return 
+                < React.Fragment
+                    input 
+                        @ placeholder "Add task"
+                        @ value {text}
+                        @ onChange
+                            => 
+                                param e
+                                _ setText(e.target.value)
+                    button 
+                        @ onClick
+                            => 
+                                _ setText('')
+                                _ dispatch
+                                    { 
+                                        @ type 'added'
+                                        @ id nextId++
+                                        @ text
+                        + Add
+    +
+    let nextId = 3

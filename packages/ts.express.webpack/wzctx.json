@@ -1,0 +1,154 @@
+{
+    "name": "ts.express.webpack",
+    "version": "0.0.1",
+    "description": "Typescript express webpack",
+    "author": {
+        "name": "Stefano Bassoli",
+        "email": "stfn.bssl@gmail.com"
+    },
+    "App": {
+        "name": "ts.express.webpack",
+        "title": "",
+        "isLocal": true,
+        "isProduction": false,
+        "port": "5100",
+        "useSsl": false,
+        "siteUrl": "http://localhost",
+        "baseUrl": "http://localhost:5100",
+        "siteUrlLocal": "http://localhost",
+        "baseUrlLocal": "http://localhost:5100",
+        "apiVersion": "v1",
+        "constants": {
+            "preview": {
+                "minWidth": 700
+            }
+        },
+        "Components": []
+    },
+    "Styles": {},
+    "Build": {
+        "features": [
+            {
+                "name": "packi",
+                "hasControllers": false,
+                "useMongoDb": false
+            },
+            {
+                "name": "wizzi",
+                "fileName": "wizzi",
+                "hasControllers": true,
+                "useMongoDb": false
+            }
+        ],
+        "examples": [],
+        "useTypescript": true,
+        "typescript": {
+            "useBabelLoader": true,
+            "useTsxFiles": false
+        },
+        "useExpress": true,
+        "express": {
+            "useSslCert": false,
+            "useErrors": false,
+            "useStaticFiles": true,
+            "staticFiles": {
+                "basePath": "__dirname, '..', '..'"
+            },
+            "useSessionStore": false,
+            "useExpressValidator": true
+        },
+        "useSession": true,
+        "session": {
+            "name": "ts.express.webpack",
+            "secret": "axr45hngmuoil9********0ofgt*kjj6767648%$£3f5&/4bnsa-----qq4)$35670qq4q"
+        },
+        "noCache": true,
+        "useSocketIO": false,
+        "socketIO": {},
+        "useCookie": true,
+        "cookie": {},
+        "useLogger": false,
+        "logger": {
+            "useMorgan": false,
+            "morgan": {}
+        },
+        "useCompression": false,
+        "compression": {
+            "level": 6
+        },
+        "useHelmet": false,
+        "helmet": {},
+        "usePromiseMiddleware": true,
+        "promiseMiddleware": {},
+        "useConfig": true,
+        "config": {
+            "useEnvalid": true,
+            "envalid": {},
+            "useUserInfo": true,
+            "userInfo": {}
+        },
+        "useWizzi": true,
+        "wizzi": {
+            "isDev": true,
+            "plugins": [
+                "./wizzi.plugin.css/index.js",
+                "./wizzi.plugin.html/index.js",
+                "./wizzi.plugin.ittf/index.js",
+                "./wizzi.plugin.js/index.js",
+                "./wizzi.plugin.json/index.js",
+                "./wizzi.plugin.md/index.js",
+                "./wizzi.plugin.svg/index.js",
+                "./wizzi.plugin.text/index.js",
+                "./wizzi.plugin.ts/index.js",
+                "./wizzi.plugin.xml/index.js",
+                "./wizzi.plugin.yaml/index.js"
+            ],
+            "pluginsBaseFolder": "C:/My/wizzi/stfnbssl/wizzi.plugins/packages",
+            "globalContext": {
+                "wzConfigIsDevelopment": true,
+                "wzConfigIsPackageDeploy": false
+            },
+            "useRunner": false
+        },
+        "useIttfStatic": true,
+        "ittfStatic": {},
+        "useWizziViewEngine": true,
+        "wizziViewEngine": {},
+        "useWizziJsonFactory": true,
+        "wizziJsonFactory": {},
+        "utils": {
+            "useAxios": true,
+            "useStringifySafe": true,
+            "useParseUrl": true,
+            "useQueryString": true,
+            "useNanoId": true,
+            "useNodeCache": true,
+            "useDiffMatchPatch": true
+        },
+        "useSite": true,
+        "site": {
+            "useIttfStatic": false,
+            "ittfStatic": {},
+            "useDemoWebpack": true,
+            "demoWebpack": {}
+        },
+        "useReact": true,
+        "react": {},
+        "useBabel": true,
+        "babel": {
+            "useLoader": true,
+            "loader": {},
+            "useReact": true,
+            "react": {}
+        },
+        "useWebpackApp": true,
+        "webpackApp": {
+            "items": [
+                {
+                    "name": "hello",
+                    "writeToDisk": true
+                }
+            ]
+        }
+    }
+}

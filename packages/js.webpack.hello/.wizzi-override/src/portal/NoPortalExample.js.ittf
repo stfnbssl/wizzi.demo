@@ -1,0 +1,25 @@
+module
+    kind react
+    import React
+        from "react"
+    import 
+        @ useState
+        from 'react'
+    import ModalContent from './ModalContent.js'
+    export-default 
+        function NoPortalExample
+            const [showModal, setShowModal] = useState(false)
+            return 
+                < React.Fragment
+                    button 
+                        @ onClick
+                            => 
+                                _ setShowModal(true)
+                        + Show modal without a portal
+                    { 
+                        && 
+                            + showModal
+                            < ModalContent 
+                                @ onClose
+                                    => 
+                                        _ setShowModal(false)

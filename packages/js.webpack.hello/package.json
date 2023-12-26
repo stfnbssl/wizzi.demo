@@ -1,0 +1,46 @@
+{
+    "name": "js.webpack.hello",
+    "version": "0.0.1",
+    "author": {
+        "name": "Stefano Bassoli",
+        "email": "stfn.bssl@gmail.com"
+    },
+    "private": false,
+    "main": "",
+    "scripts": {
+        "start": "webpack-dev-server",
+        "build": "webpack --mode development",
+        "watch": "webpack --mode development --watch",
+        "build:prod": "webpack --mode production"
+    },
+    "dependencies": {
+        "@babel/parser": "latest",
+        "@babel/preset-env": "^7.22.5",
+        "@babel/preset-react": "^7.22.5",
+        "@babel/plugin-proposal-class-properties": "latest",
+        "@babel/plugin-proposal-object-rest-spread": "latest",
+        "@babel/plugin-transform-runtime": "^7.14.5",
+        "babel-plugin-parameter-decorator": "latest",
+        "classnames": "^2.2.6",
+        "leaflet": "^1.9.1",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.14.5",
+        "@babel/core": "^7.13.10",
+        "@babel/preset-env": "^7.13.12",
+        "@babel/preset-react": "^7.12.13",
+        "babel-loader": "^8.2.2",
+        "babel-plugin-add-module-exports": "^1.0.4",
+        "css-loader": "^5.0.1",
+        "file-loader": "^6.2.0",
+        "html-loader": "^2.0.0",
+        "html-webpack-plugin": "^5.1.0",
+        "style-loader": "^2.0.0",
+        "yamljs": "latest",
+        "webpack": "^5.28.0",
+        "webpack-cli": "^4.5.0",
+        "webpack-dev-server": "^4.10.0"
+    }
+}

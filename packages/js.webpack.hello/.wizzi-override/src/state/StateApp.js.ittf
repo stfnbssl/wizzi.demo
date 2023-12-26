@@ -1,0 +1,14 @@
+module
+    kind react
+    import React
+        @ useState
+        from 'react'
+    import Gallery from './Gallery.js'
+    export-default 
+        function Page
+            return 
+                div 
+                    @ className "Page"
+                    < Gallery 
+                    < Gallery 
+

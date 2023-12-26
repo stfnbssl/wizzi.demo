@@ -19,6 +19,7 @@ module.exports = {
         
     ], 
     globalContext: {
-        wzConfigIsDevelopment: true
+        wzConfigIsDevelopment: true, 
+        wzConfigIsPackageDeploy: false
      }
  };

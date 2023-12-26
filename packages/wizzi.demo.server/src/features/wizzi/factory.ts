@@ -32,6 +32,30 @@ export function packiFilesToJsonDocuments(files: packiTypes.PackiFiles):  JsonDo
     return jsonDocuments;
 }
 
+export async function createFilesystemFactoryWithParameters(pluginsBaseFolder: string, plugins: string[], globalContext?: { 
+    [k: string]: any;
+}):  Promise<wizzi.WizziFactory> {
+
+    return new Promise((resolve, reject) => 
+        
+            wizzi.fsFactory({
+                repo: {
+                    storeKind: "filesystem"
+                 }, 
+                plugins: {
+                    items: plugins, 
+                    pluginsBaseFolder: pluginsBaseFolder
+                 }, 
+                globalContext: globalContext
+             }, function(err: any, wf: wizzi.WizziFactory) {
+            
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(wf);
+            })
+        );
+}
 export async function createFilesystemFactory(globalContext?: { 
     [k: string]: any;
 }):  Promise<wizzi.WizziFactory> {
@@ -50,12 +74,26 @@ export async function createFilesystemFactory(globalContext?: {
                  }, 
                 plugins: {
                     items: [
-                        './wizzi-core/index.js', 
-                        './wizzi-js/index.js', 
-                        './wizzi-web/index.js', 
-                        './wizzi-meta/index.js'
+                        './wizzi.plugin.c/index.js', 
+                        './wizzi.plugin.css/index.js', 
+                        './wizzi.plugin.go/index.js', 
+                        './wizzi.plugin.graphql/index.js', 
+                        './wizzi.plugin.html/index.js', 
+                        './wizzi.plugin.ittf/index.js', 
+                        './wizzi.plugin.java/index.js', 
+                        './wizzi.plugin.js/index.js', 
+                        './wizzi.plugin.json/index.js', 
+                        './wizzi.plugin.md/index.js', 
+                        './wizzi.plugin.py/index.js', 
+                        './wizzi.plugin.regexp/index.js', 
+                        './wizzi.plugin.svg/index.js', 
+                        './wizzi.plugin.text/index.js', 
+                        './wizzi.plugin.ts/index.js', 
+                        './wizzi.plugin.vtt/index.js', 
+                        './wizzi.plugin.vue/index.js', 
+                        './wizzi.plugin.yaml/index.js'
                     ], 
-                    pluginsBaseFolder: 'C:/My/wizzi/stfnbssl/wizzi/packages'
+                    pluginsBaseFolder: 'C:/My/wizzi/stfnbssl/wizzi.plugins/packages'
                  }, 
                 globalContext: Object.assign({}, gc, globalContext || {})
              }, function(err: any, wf: wizzi.WizziFactory) {
@@ -102,12 +140,26 @@ export async function createJsonFsAndFactory(files: packiTypes.PackiFiles):  Pro
                     jsonFs, 
                     plugins: {
                         items: [
-                            './wizzi-core/index.js', 
-                            './wizzi-js/index.js', 
-                            './wizzi-web/index.js', 
-                            './wizzi-meta/index.js'
+                            './wizzi.plugin.c/index.js', 
+                            './wizzi.plugin.css/index.js', 
+                            './wizzi.plugin.go/index.js', 
+                            './wizzi.plugin.graphql/index.js', 
+                            './wizzi.plugin.html/index.js', 
+                            './wizzi.plugin.ittf/index.js', 
+                            './wizzi.plugin.java/index.js', 
+                            './wizzi.plugin.js/index.js', 
+                            './wizzi.plugin.json/index.js', 
+                            './wizzi.plugin.md/index.js', 
+                            './wizzi.plugin.py/index.js', 
+                            './wizzi.plugin.regexp/index.js', 
+                            './wizzi.plugin.svg/index.js', 
+                            './wizzi.plugin.text/index.js', 
+                            './wizzi.plugin.ts/index.js', 
+                            './wizzi.plugin.vtt/index.js', 
+                            './wizzi.plugin.vue/index.js', 
+                            './wizzi.plugin.yaml/index.js'
                         ], 
-                        pluginsBaseFolder: 'C:/My/wizzi/stfnbssl/wizzi/packages'
+                        pluginsBaseFolder: 'C:/My/wizzi/stfnbssl/wizzi.plugins/packages'
                      }
                  }, function(err: any, wf: wizzi.WizziFactory) {
                 

@@ -36,16 +36,23 @@
         [ features
             {
                 name "wizziFs"
+                fileName "wizzi-fs"
                 hasControllers true
                 useMongoDb false
             {
-                name "production"
+                name "wizziGist"
+                fileName "wizzi-gist"
                 hasControllers true
-                useMongoDb true
+                useMongoDb false
             {
-                name "cdn"
+                name "wizziMeta"
+                fileName "wizzi-meta"
                 hasControllers true
-                useMongoDb true
+                useMongoDb false
+            {
+                name "packiEdit"
+                hasControllers true
+                useMongoDb false
         [ examples
         $include config.json
         
@@ -60,3 +67,5 @@
         $include wizzi.json
         
         $include utils.json
+        
+        $include react.json

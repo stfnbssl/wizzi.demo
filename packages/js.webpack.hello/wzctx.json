@@ -1,0 +1,98 @@
+{
+    "name": "js.webpack.hello",
+    "version": "0.0.1",
+    "description": "Hello world javascript webpack App",
+    "author": {
+        "name": "Stefano Bassoli",
+        "email": "stfn.bssl@gmail.com"
+    },
+    "App": {
+        "name": "ReactJsWebpackApp",
+        "title": "React js webpack App"
+    },
+    "Styles": {},
+    "Build": {
+        "features": [],
+        "useTypescript": false,
+        "typescript": {
+            "useBabelLoader": false,
+            "useTsxFiles": false
+        },
+        "useWebpack": true,
+        "webpack": {
+            "entries": [],
+            "useCss": true,
+            "css": {},
+            "useStyleLoader": true,
+            "styles": {},
+            "useImages": true,
+            "images": {},
+            "useYaml": true,
+            "yaml": {},
+            "useHtml": true,
+            "html": {
+                "title": "js.webpack.hello",
+                "template": "./index.html",
+                "filename": "index.html"
+            },
+            "useMinimizer": false,
+            "useWorker": false,
+            "useStatsWriter": false,
+            "useIgnore": false,
+            "useCodeSplitting": false,
+            "useOutput": true,
+            "output": {
+                "filename": "main.js",
+                "path": "path.resolve(__dirname, 'dist')"
+            },
+            "useEnv": false,
+            "env": {
+                "items": [
+                    {
+                        "name": "NODE_ENV",
+                        "value": "env('NODE_ENV')"
+                    },
+                    {
+                        "name": "API_SERVER_URL",
+                        "value": "env('API_SERVER_URL')"
+                    },
+                    {
+                        "name": "BUILD_TIMESTAMP",
+                        "value": "Date.now()"
+                    }
+                ]
+            },
+            "useNodePolifills": false,
+            "nodePolifills": {
+                "useBuffer": false
+            },
+            "useDevServer": true,
+            "devServer": {
+                "static": "__dirname"
+            }
+        },
+        "useReact": true,
+        "react": {},
+        "useBabel": true,
+        "babel": {
+            "useParser": true,
+            "useRuntime": false,
+            "useDinamicImport": true,
+            "addModuleExport": false,
+            "useVendor": true,
+            "vendor": {
+                "compactPath": "./src/vendor"
+            },
+            "useResolutions": true,
+            "resolutions": [
+                {
+                    "name": "**/babel-core",
+                    "value": "7.0.0-bridge.0"
+                }
+            ]
+        },
+        "utils": {
+            "useLeaflet": true
+        }
+    }
+}

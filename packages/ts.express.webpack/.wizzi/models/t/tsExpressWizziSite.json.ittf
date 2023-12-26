@@ -1,0 +1,7 @@
+$group
+    useSite true
+    { site
+        useIttfStatic false
+        { ittfStatic
+        useDemoWebpack true
+        { demoWebpack

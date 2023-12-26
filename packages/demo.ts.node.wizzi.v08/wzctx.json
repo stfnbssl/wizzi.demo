@@ -1,0 +1,90 @@
+{
+    "name": "demo.ts.node.wizzi.v08",
+    "version": "0.0.1",
+    "description": "demo.ts.node.wizzi.v08",
+    "author": {
+        "name": "Stefano Bassoli",
+        "email": "stfn.bssl@gmail.com"
+    },
+    "App": {
+        "name": "TS Node Demo",
+        "kind": "NodeCLI"
+    },
+    "Build": {
+        "isCLI": true,
+        "features": [],
+        "useConfig": true,
+        "config": {
+            "useEnvalid": true,
+            "envalid": {}
+        },
+        "useTypescript": true,
+        "typescript": {
+            "useBabelLoader": true,
+            "useTsxFiles": false
+        },
+        "useJest": false,
+        "jest": {},
+        "useWizzi": true,
+        "wizzi": {
+            "isDev": true,
+            "useV08": true,
+            "v08": {
+                "plugins": [
+                    "css",
+                    "graphql",
+                    "html",
+                    "ittf",
+                    "js",
+                    "ts",
+                    "json",
+                    "md",
+                    "text",
+                    "svg",
+                    "xml",
+                    "yaml"
+                ]
+            },
+            "plugins": [
+                "./wizzi.plugin.css/index.js",
+                "./wizzi.plugin.graphql/index.js",
+                "./wizzi.plugin.html/index.js",
+                "./wizzi.plugin.ittf/index.js",
+                "./wizzi.plugin.js/index.js",
+                "./wizzi.plugin.ts/index.js",
+                "./wizzi.plugin.json/index.js",
+                "./wizzi.plugin.md/index.js",
+                "./wizzi.plugin.text/index.js",
+                "./wizzi.plugin.svg/index.js",
+                "./wizzi.plugin.xml/index.js",
+                "./wizzi.plugin.yaml/index.js"
+            ],
+            "pluginsBaseFolder": "C:/My/wizzi/stfnbssl/wizzi.plugins/packages",
+            "globalContext": {
+                "wzConfigIsDevelopment": true,
+                "wzConfigIsPackageDeploy": false
+            },
+            "useRunner": false
+        },
+        "utils": {
+            "useRimRaf": true,
+            "useMinimist": true,
+            "useAxios": false,
+            "useEscapeRegexp": false,
+            "useEscapeHtml": false,
+            "useNullThrows": false,
+            "useLodash": false,
+            "useStringifySafe": false,
+            "useParseUrl": false,
+            "useEs6Error": false,
+            "useJsCookie": false,
+            "useQueryString": false,
+            "useSanitizeHtml": false,
+            "useDateFns": false,
+            "useFetchPonyfill": false,
+            "useNanoId": false,
+            "useGitUrlParse": false,
+            "useJsonToAst": false
+        }
+    }
+}

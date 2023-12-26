@@ -1,0 +1,38 @@
+module
+    kind react
+    import React
+        from "react"
+    import 'leaflet/dist/leaflet.css'
+    import 
+        as L
+        from 'leaflet'
+    export 
+        function createMapWidget
+            param containerDomNode
+            const map = L.map(containerDomNode)
+            _ map.setView
+                [ 
+                    @ 0
+                    @ 0
+                @ 0
+            _ L.tileLayer
+                @ 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+                { 
+                    @ maxZoom 19
+                    @ attribution '© OpenStreetMap'
+                ._ addTo
+                    @ map
+            return map
+    export 
+        function addPopupToMapWidget
+            param map
+            const popupDiv = document.createElement('div')
+            _ L.popup().setLatLng
+                [ 
+                    @ 0
+                    @ 0
+                ._ setContent
+                    @ popupDiv
+                ._ openOn
+                    @ map
+            return popupDiv

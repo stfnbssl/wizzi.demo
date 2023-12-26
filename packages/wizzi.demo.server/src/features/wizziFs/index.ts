@@ -5,11 +5,17 @@
 */
 import {ControllerType} from '../app/types';
 import * as wizziFsTypes from './types';
-import * as wizziFsApi from './api/wizziFs';
+import * as apis from './api/wizziFs';
+import * as byHash from './api/byHash';
 import {ApiV1WizziFsController} from './controllers/apiv1wizzifs';
 
 const wizziFsControllers: ControllerType[] = [
     new ApiV1WizziFsController()
 ];
+
+const wizziFsApi = {
+    ...apis, 
+    ...byHash
+ };
 
 export {wizziFsTypes, wizziFsControllers, wizziFsApi};

@@ -1,0 +1,41 @@
+module
+    kind react
+    import 
+        @ useRef
+        @ useEffect
+        @ useState
+        from 'react'
+    import 
+        @ createPortal
+        from 'react-dom'
+    import 
+        @ createMapWidget
+        @ addPopupToMapWidget
+        from './map-widget.js'
+    export-default 
+        function Map
+            const containerRef = useRef(null)
+            const mapRef = useRef(null)
+            const [popupContainer, setPopupContainer] = useState(null)
+            _ useEffect
+                => 
+                    if mapRef.current === null
+                        const map = createMapWidget(containerRef.current)
+                        set mapRef.current = map
+                        const popupDiv = addPopupToMapWidget(map)
+                        _ setPopupContainer(popupDiv)
+                [ 
+            return 
+                div 
+                    @ style
+                        { 
+                            @ width 250
+                            @ height 250
+                    @ ref {containerRef}
+                    { 
+                        && 
+                            + popupContainer !== null
+                            _ createPortal
+                                p 
+                                    + Hello from React!
+                                @ popupContainer

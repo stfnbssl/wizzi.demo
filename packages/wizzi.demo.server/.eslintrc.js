@@ -21,6 +21,7 @@ module.exports = {
         sourceType: "module"
      }, 
     env: {
+        browser: true, 
         es6: true
      }, 
     extends: [
@@ -34,7 +35,9 @@ module.exports = {
         '@typescript-eslint'
     ], 
     settings: {
-        
+        react: {
+            version: '16.8'
+         }
      }, 
     rules: {
         'spaced-comment': [

@@ -1,0 +1,77 @@
+{
+    $include v08/env/vars
+    
+    name "ts.express.webpack"
+    version "0.0.1"
+    description "Typescript express webpack"
+    { author
+        name "Stefano Bassoli"
+        email "stfn.bssl@gmail.com"
+    
+    { App
+        name "ts.express.webpack"
+        title ""
+        isLocal true
+        isProduction false
+        port "5100"
+        useSsl false
+        siteUrl "http://localhost"
+        baseUrl "http://localhost:5100"
+        siteUrlLocal "http://localhost"
+        baseUrlLocal "http://localhost:5100"
+        apiVersion "v1"
+        { constants
+            { preview
+                minWidth 700
+        [ Components
+    
+    { Styles
+    
+    { Build
+        [ features
+            {
+                name "packi"
+                hasControllers false
+                useMongoDb false
+            {
+                name "wizzi"
+                fileName "wizzi"
+                hasControllers true
+                useMongoDb false
+        [ examples
+        $include code.json
+        
+        $include tsExpress.json
+        
+        $include tsExpressFeatureConfig.json
+        
+        $include tsExpressFeatureWizzi.json
+        
+        $include tsExpressFeaturePacki.json
+        
+        $include tsExpressUtils.json
+        
+        $include tsExpressWizziSite.json
+        
+        $include react.json
+        
+        useBabel true
+        { babel
+            useLoader true
+            { loader
+            useReact true
+            { react
+        useWebpackApp true
+        { webpackApp
+            [ items
+                {
+                    name "hello"
+                    writeToDisk true
+        { utils
+            useAxios true
+            useStringifySafe true
+            useParseUrl true
+            useQueryString true
+            useNanoId true
+            useNodeCache true
+            useDiffMatchPatch true

@@ -1,7 +1,7 @@
 /*
     artifact generator: C:\My\wizzi\stfnbssl\wizzi\packages\wizzi-js\lib\artifacts\ts\module\gen\main.js
     package: wizzi-js@0.7.14
-    primary source IttfDocument: C:\My\wizzi\stfnbssl\wizzi.demo\packages\wizzi.demo.server\.wizzi\src\features\wizziGist\controllers\apiv1wizzigist.ts.ittf
+    primary source IttfDocument: C:\My\wizzi\stfnbssl\wizzi.demo\packages\wizzi.demo.server\.wizzi-override\src\features\wizziGist\controllers\apiv1wizzigist.ts.ittf
 */
 import express from 'express';
 import {Router, Request, Response, NextFunction} from 'express';
@@ -10,9 +10,9 @@ import {sendHtml, sendSuccess, sendPromiseResult, sendFailure} from '../../../ut
 import {restParamsCheck} from '../../../utils/rest';
 import {FcError, SYSTEM_ERROR} from '../../../utils/error';
 import {statusCode} from '../../../utils';
-import {getIttfDocument, putIttfDocument} from '../api/wizziGist';
+import {createGist, updateGist, deleteGist} from '../api/wizziGist';
 
-const myname = 'features/wizzifs/controllers/apiv1wizzifs';
+const myname = 'features/wizzigist/controllers/apiv1wizzigist';
 
 function makeHandlerAwareOfAsyncErrors(handler) {
 
@@ -50,26 +50,28 @@ export class ApiV1WizziGistController implements ControllerType {
     
     initialize = (app: express.Application, initValues: AppInitializerType) => {
         console.log("[33m%s[0m", 'Entering ApiV1WizziGistController.initialize');
-        this.router.get('/ittf', this.getIttfDocument);
-        this.router.put('/ittf', this.putIttfDocument);
+        this.router.post('/', this.execCreateGist);
+        this.router.put('/', this.execUpdateGist);
     };
     
-    private getIttfDocument = async (request: Request, response: Response) => {
+    private execCreateGist = async (request: Request, response: Response) => {
     
-        console.log('getIttfDocument.request.params', request.params, __filename);
+        console.log('execCreateGist.request.params', request.params, __filename);
         var __check = restParamsCheck(request);
-        var hash = __check.notEmpty('query', 'hash');
+        var kind = __check.notEmpty('query', 'kind');
+        var name = __check.notEmpty('query', 'name');
+        var schema = __check.notEmpty('query', 'schema');
         if (__check.hasErrors) {
             return __check.sendErrors(response);
         }
-        getIttfDocument(hash).then((result: any) => 
+        createGist(kind, name, schema).then((result: any) => 
         
             sendSuccess(response, result)
         ).catch((err: any) => {
         
             if (typeof err === 'object' && err !== null) {
             }
-            console.log("[31m%s[0m", 'ApiV1WizziGist.getIttfDocument.error', err);
+            console.log("[31m%s[0m", 'ApiV1WizziGist.execCreateGist.error', err);
             sendFailure(response, {
                 err: err
              }, 501)
@@ -78,25 +80,24 @@ export class ApiV1WizziGistController implements ControllerType {
     }
     ;
     
-    private putIttfDocument = async (request: Request, response: Response) => {
+    private execUpdateGist = async (request: Request, response: Response) => {
     
         console.log('request.body', request.body, __filename);
         console.log('request.query', request.query, __filename);
         var __check = restParamsCheck(request);
         var hash = __check.notEmpty('body', 'hash');
         var content = __check.notEmpty('body', 'content');
-        var prettify = __check.optional('body', 'prettify');
         if (__check.hasErrors) {
             return __check.sendErrors(response);
         }
-        putIttfDocument(hash, content, prettify).then((result: any) => 
+        updateGist(hash, content).then((result: any) => 
         
             sendSuccess(response, result)
         ).catch((err: any) => {
         
             if (typeof err === 'object' && err !== null) {
             }
-            console.log("[31m%s[0m", 'ApiV1WizziGist.putIttfDocument.error', err);
+            console.log("[31m%s[0m", 'ApiV1WizziGist.execUpdateGist.error', err);
             sendFailure(response, {
                 err: err
              }, 501)

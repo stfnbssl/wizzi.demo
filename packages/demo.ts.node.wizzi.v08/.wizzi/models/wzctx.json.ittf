@@ -1,0 +1,27 @@
+{
+    $include v08/env/vars
+    
+    name "demo.ts.node.wizzi.v08"
+    version "0.0.1"
+    description "demo.ts.node.wizzi.v08"
+    { author
+        name "Stefano Bassoli"
+        email "stfn.bssl@gmail.com"
+    
+    { App
+        name "TS Node Demo"
+        kind "NodeCLI"
+    
+    { Build
+        isCLI true
+        [ features
+        
+        $include config.json
+        
+        $include code.json
+        
+        $include test.json
+        
+        $include wizzi.json
+        
+        $include utils.json

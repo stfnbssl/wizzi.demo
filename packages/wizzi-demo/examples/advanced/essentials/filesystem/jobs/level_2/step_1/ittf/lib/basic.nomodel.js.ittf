@@ -1,0 +1,10 @@
+module
+	kind jsfile
+
+	function sayHello
+		param name
+		success 'Hello ' + name
+
+	_ sayHello
+		@ 'stefi'
+

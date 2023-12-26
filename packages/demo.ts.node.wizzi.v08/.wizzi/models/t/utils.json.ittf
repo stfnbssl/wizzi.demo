@@ -1,0 +1,20 @@
+$group
+    { utils
+        useRimRaf true
+        useMinimist true
+        useAxios false
+        useEscapeRegexp false
+        useEscapeHtml false
+        useNullThrows false
+        useLodash false
+        useStringifySafe false
+        useParseUrl false
+        useEs6Error false
+        useJsCookie false
+        useQueryString false
+        useSanitizeHtml false
+        useDateFns false
+        useFetchPonyfill false
+        useNanoId false
+        useGitUrlParse false
+        useJsonToAst false

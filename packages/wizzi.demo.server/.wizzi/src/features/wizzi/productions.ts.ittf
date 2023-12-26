@@ -34,10 +34,13 @@ module
             @ createJsonFsAndFactory
             @ ensurePackiFilePrefix
         @ createFilesystemFactory
+        @ createFilesystemFactoryWithParameters
         from './factory'
     import
         @ GenerationOptions
         @ GeneratedArtifact
+        @ WizziModelTypesRequest
+        @ WizziJobTypesRequest
         @ TransformationOptions
         @ TransformedModel
         from './types'
@@ -50,13 +53,16 @@ module
     $include productions/mTree
     $include productions/generateArtifact
     $include productions/generateFolderArtifacts
+    $include productions/generateWizziModelTypes
     $include productions/transformModel
     $include productions/metaGenerate
     $include productions/executeJob
     $include productions/inferAndLoadContext
     $include productions/scanIttfDocument
     $include productions/wizzify
+    $include productions/wizzifyV08
     $include productions/getCodeAST
+    $include productions/getCodeASTV08
     $include productions/loadSiteJsonModel
     function jsonFsToPackiFiles
         param jsonFs

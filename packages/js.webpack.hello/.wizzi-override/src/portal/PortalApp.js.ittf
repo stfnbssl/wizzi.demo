@@ -1,0 +1,16 @@
+module
+    kind react
+    import React
+        from "react"
+    import NoPortalExample from './NoPortalExample'
+    import PortalExample from './PortalExample'
+    export-default 
+        function App
+            return 
+                < React.Fragment
+                    div 
+                        @ className "clipping-container"
+                        < NoPortalExample 
+                    div 
+                        @ className "clipping-container"
+                        < PortalExample 

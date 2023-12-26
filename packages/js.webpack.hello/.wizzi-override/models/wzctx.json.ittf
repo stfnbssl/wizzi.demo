@@ -1,0 +1,24 @@
+{
+    $include v08/env/vars
+    
+    name "js.webpack.hello"
+    version "0.0.1"
+    description "Hello world javascript webpack App"
+    { author
+        name "Stefano Bassoli"
+        email "stfn.bssl@gmail.com"
+    
+    { App
+        name "ReactJsWebpackApp"
+        title "React js webpack App"
+    
+    { Styles
+    
+    { Build
+        [ features
+        $include code.json
+        $include webpack.json
+        $include react.json
+        $include commonsBabel.json
+        { utils
+            useLeaflet true

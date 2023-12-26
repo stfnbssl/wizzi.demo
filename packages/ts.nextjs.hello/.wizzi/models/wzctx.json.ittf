@@ -1,0 +1,28 @@
+{
+    name "ts.nextjs.hello"
+    npmName ""
+    version "0.0.1"
+    description "Hello world Nextjs App"
+    { author
+        name "Stefano Bassoli"
+        email "stfn.bssl@gmail.com"
+    { license
+        type "MIT"
+        copy "copy 2023"
+    { github
+        userid3 "stfnbssl"
+    { Build
+        $include tsNextjsBasicApp.json
+        useNextjs true
+        { nextjs
+        useReact true
+        { react
+        useTypescript true
+        { typescript
+        useRemark true
+        { remark
+        useTailwind true
+        { tailwind
+        { utils
+            useDateFns true
+            useGrayMatter true

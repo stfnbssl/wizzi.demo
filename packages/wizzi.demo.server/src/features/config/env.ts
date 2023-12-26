@@ -43,7 +43,10 @@ export default function create():  ConfigType {
                 metaHtmlIttfPath: path.join(__ittfPath, 'meta', 'html', 'index.html.ittf'), 
                 metaFolderIttfPath: path.join(__ittfPath, 'meta', 'folder', 'index.html.ittf'), 
                 metaHtmlTextPath: path.join(__ittfPath, 'meta', 'text', 'index.html.ittf'), 
-                jobsBasePath: path.join(__ittfPath, 'data', 'jobs')
+                jobsBasePath: path.join(__ittfPath, 'data', 'jobs'), 
+                userUserName: "stfnbssl", 
+                userDisplayName: "Stefano Bassoli", 
+                userAvatarUrl: "https://avatars.githubusercontent.com/u/728956?v=4"
              };
             Object.keys(config).forEach((element) => {
             

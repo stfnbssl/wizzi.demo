@@ -11,7 +11,6 @@ import { BodyParserMiddleware } from './bodyParser';
 import { CacheControlMiddleware } from './cacheControl';
 import { StaticFilesMiddleware } from './static';
 import { WizziViewEngineMiddleware } from './wizziViewEngine';
-import { WizziCdnMiddleware } from './wizziCdn';
 import { PromiseMiddleware } from './promise';
 const appMiddlewaresPre: MiddlewareType[] = [
     CorsMiddleware, 
@@ -21,7 +20,6 @@ const appMiddlewaresPre: MiddlewareType[] = [
     CacheControlMiddleware, 
     StaticFilesMiddleware, 
     WizziViewEngineMiddleware, 
-    WizziCdnMiddleware, 
     PromiseMiddleware
 ];
 const appMiddlewaresPost: MiddlewareType[] = [];
